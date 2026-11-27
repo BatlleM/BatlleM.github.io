@@ -1,0 +1,19 @@
+.hero { min-height: 55vh; display: flex; flex-direction: column; justify-content: center;
+  align-items: center; text-align: center; padding: 1rem 0; }
+.hero h1 { font-size: clamp(2.5rem, 9vw, 4.5rem); letter-spacing: .12em; margin: 0 0 .5rem; }
+.hero .tagline { font-size: 1.1rem; opacity: .75; }
+.hero p { margin-bottom: 1rem; }
+
+.badges a { margin-right: .35rem; }
+.badges img { vertical-align: middle; }
+
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .75rem; margin: 1rem 0 1.5rem; }
+.kpi { border: 1px solid rgba(127,127,127,.25); border-radius: 10px; padding: .75rem .9rem; }
+.kpi .label { font-size: .8rem; opacity: .7; }
+.kpi .value { font-size: 1.5rem; font-weight: 600; }
+.kpi .ref { font-size: .8rem; opacity: .7; }
+
+.steps { counter-reset: s; }
+.cell-output-display svg { max-width: 100%; height: auto; }
+
+.cell-output-display figure { margin-bottom: 1rem; }

@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "cases/focused-wave/index.html#context",
+    "href": "cases/focused-wave/index.html#context",
+    "title": "Numerical wave tank: focused wave",
+    "section": "Context",
+    "text": "Context\nFloating offshore wind turbines will be installed where winds are strong and waves are powerful, and a breaking wave can hit their floating column much harder than a regular wave. DIMPACT (2020-2023), a research project led by France Energies Marines, set out to include these loads in the design of floating wind turbines. It combined wave-flume experiments at Ifremer with numerical simulations and produced engineering methods for breaking-wave loads.\n\n  \n    \n  \n  The focused wave in the 2D numerical wave tank, computed with code_saturne (run a023, the same run as\n  the results below). Propagation at real speed, then breaking in 4x slow motion. Full tank above, breaking zone\n  below; water coloured by speed, air in grey, arrows show the water velocity.\n\nAssessing the loads on offshore wind turbines starts with getting the wave itself right, from the wave-maker to the moment it overturns. This case reproduces, in 2D, the wave validation of the following paper. Its subject is a focused, extreme breaking wave from the DIMPACT experiments (wave 7: Hs = 0.13 m, Tp = 2.49 s).\n\n\n\n\n\n\nNoteDeep water focused breaking wave loads on a fixed cylinder\n\n\n\nBatlle Martin, M., Harris, J. C., Filipot, J.-F., Hulin, F., Tassin, A. and Renaud, P. (2023). Coastal Engineering 186, 104397.\nRead the paper   doi:10.1016/j.coastaleng.2023.104397\n\n\n\n\n\nThe 2D numerical wave tank. Ifremer’s flume has a piston wave-maker at x = 0. The models start at x = 2 m from velocities computed by a potential-flow (BEM) simulation of the paddle motion. They focus the wave near x = 20 m and absorb it downstream.\n\n\nThe wave is computed with two CFD codes:\n\ncode_saturne 7.0.5 is the code of the paper, developed by EDF (code-saturne.org; Archambeau et al., 2004). It tracks the free surface with an algebraic volume-of-fluid (VOF) method.\nOpenFOAM® v2406 (openfoam.com; Weller et al., 1998) runs the fluxinator solver. It reconstructs the free surface geometrically with isoAdvector (Roenby et al., 2016) and PLIC-RDF (Scheufler and Roenby, 2019).\n\nEverything else is identical in the two codes: the same mesh of 47,004 cells (25 mm cells at the free surface), the same measured inlet velocities with their spikes removed, the same outlet damping zone and the same wave gauges. Both run on a desktop PC with 6 cores, in 5.1 h (code_saturne) and 1.2 h (OpenFOAM)."
+  },
+  {
+    "objectID": "cases/focused-wave/index.html#results-at-a-glance",
+    "href": "cases/focused-wave/index.html#results-at-a-glance",
+    "title": "Numerical wave tank: focused wave",
+    "section": "Results at a glance",
+    "text": "Results at a glance\n\nTemporal evaluation\n\n\n\nFree-surface elevation at the last wave gauge before breaking: experiment (open circles), code_saturne (blue) and OpenFOAM (red).\n\n\nBoth codes follow the measured wave record closely. At this gauge, the RMS error over t = 10-26 s is 1.9 mm for code_saturne and 2.4 mm for OpenFOAM. The highest crest (232 mm measured) is within 1 mm in code_saturne and 3 mm too high in OpenFOAM, and both arrive within 4 ms of the measurement. Model time is shifted by 6 ms, because the flume’s paddle lagged its command by 6 ms, and the model gauges are read at the real probe positions.\n\n\nSpatial evaluation\n\n\n\nFree-surface profiles during overturning at t = 29.4, 29.6 and 29.8 s: experiment from the camera (open circles), code_saturne (blue) and OpenFOAM (red).\n\n\nBoth codes reproduce the shape of the steep front recorded by the camera. The code_saturne front is 2-3 cm behind the camera and the OpenFOAM front 4-6 cm behind, one to two mesh cells. This is within the uncertainty of the camera profiles themselves: two ways of processing the same video differ by about 4 cm."
+  },
+  {
+    "objectID": "cases/focused-wave/index.html#references",
+    "href": "cases/focused-wave/index.html#references",
+    "title": "Numerical wave tank: focused wave",
+    "section": "References",
+    "text": "References\n\nArchambeau, F., Méchitoua, N. and Sakiz, M. (2004). Code_Saturne: a finite volume code for the computation of turbulent incompressible flows, industrial applications. International Journal on Finite Volumes 1(1).\nRoenby, J., Bredmose, H. and Jasak, H. (2016). A computational method for sharp interface advection. Royal Society Open Science 3, 160405. doi:10.1098/rsos.160405\nScheufler, H. and Roenby, J. (2019). Accurate and efficient surface reconstruction from volume fraction data on general meshes. Journal of Computational Physics 383, 1-23. doi:10.1016/j.jcp.2019.01.009\nWeller, H. G., Tabor, G., Jasak, H. and Fureby, C. (1998). A tensorial approach to computational continuum mechanics using object-oriented techniques. Computers in Physics 12(6), 620-631. doi:10.1063/1.168744\n\nOPENFOAM® is a registered trade mark of OpenCFD Limited, producer and distributor of the OpenFOAM software via www.openfoam.com. This page is not approved or endorsed by OpenCFD Limited."
+  },
+  {
+    "objectID": "portfolio.html",
+    "href": "portfolio.html",
+    "title": "Portfolio",
+    "section": "",
+    "text": "Numerical wave tank: focused wave\n\n\n\nNov 19, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MARBA",
+    "section": "",
+    "text": "MARBA\nComputational fluid dynamics"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "I am Marc Batlle Martin, a civil engineer and fluid dynamicist from Torroella de Montgrí. My work is about making numerical models useful to engineers, scientists and policymakers.\nI am currently working at the Barcelona Supercomputing Center."
+  }
+]
